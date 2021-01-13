@@ -32,6 +32,9 @@ export default function BlogPostIndex() {
               <Card.Header>{blogPost.title}</Card.Header>
               <Card.Body>
                 <Image src={blogPost.image_url} style={{maxWidth: "40%", maxHeight: "auto"}} thumbnail fluid />
+                <h3>{blogPost.artist}</h3>
+                <h3>{blogPost.year}</h3>
+                <h3>{blogPost.like_count}</h3>
               </Card.Body>
             </Card>
           )}
