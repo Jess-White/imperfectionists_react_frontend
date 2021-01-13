@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './Components/Header';
-import BlogPostNew from './Components/BlogPostNew';
+import BlogPostIndex from './Components/BlogPostIndex';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <BlogPostNew />
+      <BlogPostIndex />
     </div>
   );
 }

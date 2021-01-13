@@ -7,13 +7,10 @@ import Button from 'react-bootstrap/Button';
 export default function BlogPostNew() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [author, setAuthor] = useState("");
+  const [artist, setArtist] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   // const [wordcount, setWordcount] = useState("");
-  const [finished, setFinished] = useState("");
-  const [reviewed, setReviewed] = useState("");
-  const [favorite, setFavorite] = useState("");
-  // const [like, setLike] = useState("");
+  // const [like_count, setLike_count] = useState("");
   const [name, setName] = useState("");
   
 
@@ -21,9 +18,14 @@ export default function BlogPostNew() {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
     setName(value);
   }
+
+  const handleInputChange = event => {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+  };
 
   return (
     <Card>
@@ -54,11 +56,11 @@ export default function BlogPostNew() {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Author</Form.Label>
+            <Form.Label>Artist</Form.Label>
             <Form.Control 
               type="text"
               name="author"
-              value={author}
+              value={artist}
               onChange={e => setAuthor(e.target.value)}
               placeholder="author"
               required
@@ -73,36 +75,6 @@ export default function BlogPostNew() {
               onChange={e => setImageUrl(e.target.value)}
               placeholder="Image URL"
               required
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Finished</Form.Label>
-            <Form.Check
-              type="checkbox"
-              name="finished"
-              value="finished"
-              checked={finished}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Reviewed</Form.Label>
-            <Form.Check
-              type="checkbox"
-              name="reviewed"
-              value="reviewed"
-              checked={reviewed}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Favorite</Form.Label>
-            <Form.Check
-              type="checkbox"
-              name="favorite"
-              value="favorite"
-              checked={favorite}
-              onChange={handleChange}
             />
           </Form.Group>
         </Form>
