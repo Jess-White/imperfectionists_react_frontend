@@ -7,6 +7,10 @@ import axios from 'axios';
 // }
 
 export const getBlogPosts = () => {
-  return axios('/api/blog_posts')
+  return axios
+    .get('/api/blog_posts')
     .then(response => response.data)
+    .catch(errors => {
+      console.log(errors);
+  })
 }
