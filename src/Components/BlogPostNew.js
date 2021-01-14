@@ -6,13 +6,11 @@ import Button from 'react-bootstrap/Button';
 
 export default function BlogPostNew() {
   const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [blurb, setBlurb] = useState("");
   const [artist, setArtist] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  // const [wordcount, setWordcount] = useState("");
-  // const [like_count, setLike_count] = useState("");
-  const [name, setName] = useState("");
-  
+  const [wordCount, setWordCount] = useState("");
+  const [likeCount, setLikeCount] = useState("");
 
   const handleChange = (event) => {
     const target = event.target;
@@ -48,10 +46,10 @@ export default function BlogPostNew() {
             <Form.Label>Text</Form.Label>
             <Form.Control 
               type="text"
-              name="text"
-              value={text}
-              onChange={e => setText(e.target.value)}
-              placeholder="text"
+              name="blurb"
+              value={blurb}
+              onChange={e => setBlurb(e.target.value)}
+              placeholder="blurb"
               required
             />
           </Form.Group>
@@ -59,9 +57,9 @@ export default function BlogPostNew() {
             <Form.Label>Artist</Form.Label>
             <Form.Control 
               type="text"
-              name="author"
+              name="artist"
               value={artist}
-              onChange={e => setAuthor(e.target.value)}
+              onChange={e => setArtist(e.target.value)}
               placeholder="author"
               required
             />
