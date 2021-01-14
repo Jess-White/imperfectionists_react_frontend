@@ -9,21 +9,18 @@ export default function BlogPostNew() {
   const [blurb, setBlurb] = useState("");
   const [artist, setArtist] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [wordCount, setWordCount] = useState("");
-  const [likeCount, setLikeCount] = useState("");
 
-  const handleChange = (event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    setName(value);
-  }
+  // const [wordCount, setWordCount] = useState("");
+  // const [likeCount, setLikeCount] = useState("");
 
-  const handleInputChange = event => {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-  };
+  // const handleChange = (event) => {
+  //   const target = event.target;
+  //   const value = target.type === 'checkbox' ? target.checked : target.value;
+  //   const name = target.name;
+  //   setName(value);
+  // }
+
+  
 
   return (
     <Card>
@@ -34,44 +31,44 @@ export default function BlogPostNew() {
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control 
-              type="text"
-              name="title"
               value={title}
               onChange={e => setTitle(e.target.value)}
               placeholder="title"
+              type="text"
+              name="title"
               required
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Text</Form.Label>
+            <Form.Label>Blurb</Form.Label>
             <Form.Control 
-              type="text"
-              name="blurb"
               value={blurb}
               onChange={e => setBlurb(e.target.value)}
               placeholder="blurb"
+              type="text"
+              name="blurb"
               required
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Artist</Form.Label>
             <Form.Control 
-              type="text"
-              name="artist"
               value={artist}
               onChange={e => setArtist(e.target.value)}
-              placeholder="author"
+              placeholder="artist"
+              type="text"
+              name="artist"
               required
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>ImageUrl</Form.Label>
+            <Form.Label>Image Url</Form.Label>
             <Form.Control 
-              type="text"
-              name="imageUrl"
               value={imageUrl}
               onChange={e => setImageUrl(e.target.value)}
-              placeholder="Image URL"
+              placeholder="image url"
+              type="text"
+              name="imageUrl"
               required
             />
           </Form.Group>
