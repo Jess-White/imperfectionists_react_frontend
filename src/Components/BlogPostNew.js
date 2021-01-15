@@ -3,6 +3,8 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { createBlogPost } from '../Services/DatabaseCalls.js';
+
 
 export default function BlogPostNew() {
   const [title, setTitle] = useState("");
@@ -20,14 +22,38 @@ export default function BlogPostNew() {
   //   setName(value);
   // }
 
-  
+  const resetValues = () => {
+    setTitle("");
+    setBlurb("");
+    setArtist("");
+    setImageUrl("");
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault() 
+      createBlogPost({
+        title: title,
+        blurb: blurb,
+        artist: artist,
+        image_url: imageUrl
+      })
+      .then(() => {
+        resetValues()
+        // this.myFormRef.reset()
+      })
+      .catch(() => {
+        resetValues()
+        // this.myFormRef.reset()
+      })
+  }
 
   return (
     <Card>
       <Card.Header>Add New Felix Valotton Content!
       </Card.Header>
       <Card.Body>
-        <Form>
+        <Form onSubmit={handleSubmit}>
+        {/* <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}> */}
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control 
@@ -72,6 +98,19 @@ export default function BlogPostNew() {
               required
             />
           </Form.Group>
+          <Button 
+            className="btn-lg" 
+            style={{
+              backgroundColor: "#ffff1b", 
+              color: "#000080", 
+              fontSize: "20px", 
+              fontWeight: "bold",
+              marginTop: "2%"
+            }} 
+            type="submit"
+          >
+            Add Blog Post
+          </Button>
         </Form>
       </Card.Body>
     </Card>
