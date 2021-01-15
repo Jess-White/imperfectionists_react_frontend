@@ -39,11 +39,9 @@ export default function BlogPostNew() {
       })
       .then(() => {
         resetValues()
-        // this.myFormRef.reset()
       })
       .catch(() => {
         resetValues()
-        // this.myFormRef.reset()
       })
   }
 
@@ -53,7 +51,6 @@ export default function BlogPostNew() {
       </Card.Header>
       <Card.Body>
         <Form onSubmit={handleSubmit}>
-        {/* <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}> */}
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control 
