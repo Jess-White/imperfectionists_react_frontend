@@ -10,10 +10,10 @@ function Navigation() {
               <div>
               <Nav className="mr-auto">
                 <Nav.Item style={{fontSize: "150%"}} className="active">
-                  <Nav.Link href="/blog_posts">Dashboard</Nav.Link>
+                  <Nav.Link href="/blog_posts">Gallery</Nav.Link>
                 </Nav.Item>
                 <Nav.Item style={{fontSize: "150%"}} className="active">
-                  <Nav.Link href="/blog_posts-new">Grants</Nav.Link>
+                  <Nav.Link href="/blog_posts-new">Hang Painting</Nav.Link>
                 </Nav.Item>
                 </Nav>
                 </div>

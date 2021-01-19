@@ -5,6 +5,9 @@ import BlogPostIndex from './Components/BlogPostIndex';
 import BlogPostShow from './Components/BlogPostShow';
 import BlogPostNew from './Components/BlogPostNew';
 import BlogPostUpdate from './Components/BlogPostUpdate';
+import UserIndex from './Components/UserIndex';
+import UserNew from './Components/UserNew';
+import Login from './Components/Login';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
@@ -22,9 +25,13 @@ function App() {
             <Route path={'/blog_posts/:id'} component={BlogPostShow} />
             <Route path={'/blog_posts-new'} component={BlogPostNew} />
             <Route path={'/blog_posts-update'} component={BlogPostUpdate} />
+            <Route path={'/users'} component={UserIndex} />
+            <Route path={'/user-new'} component={UserNew} />
+            <Route path={'/user-update'} component={UserUpdate} />
+            <Route path={'/login'} component={Login} />
+
           </Switch>
         </BrowserRouter>
-        <Footer />
       </div>
   );
 }
