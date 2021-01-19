@@ -11,7 +11,7 @@ export default function UserIndex() {
   let userRequest
   
   useEffect(() => 
-      {userRequest = getBlogPosts()
+      {userRequest = getUsers()
         .then(response => {
           setUsers(response)
         }).catch(error => {
