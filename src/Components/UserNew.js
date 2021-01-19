@@ -96,7 +96,7 @@ export default function BlogPostNew() {
             }} 
             type="submit"
           >
-            Add Blog Post
+            Add New User
           </Button>
         </Form>
       </Card.Body>

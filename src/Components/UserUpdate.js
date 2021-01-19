@@ -3,32 +3,29 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { updateBlogPost } from '../Services/DatabaseCalls.js';
+import { updateUser } from '../Services/DatabaseCalls.js';
 
 
 export default function BlogPostNew() {
-  const [title, setTitle] = useState("");
-  const [blurb, setBlurb] = useState("");
-  const [artist, setArtist] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-
-  // const [wordCount, setWordCount] = useState("");
-  // const [likeCount, setLikeCount] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   const resetValues = () => {
-    setTitle(title);
-    setBlurb(blurb);
-    setArtist(artist);
-    setImageUrl(imageUrl);
+    setUserName(userName);
+    setEmail(email);
+    setPassword(password);
+    setPasswordConfirmation(passwordConfirmation);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault() 
       updateBlogPost({
-        title: title,
-        blurb: blurb,
-        artist: artist,
-        image_url: imageUrl
+        userName: userName,
+        email: email,
+        password: password,
+        passwordConfirmation: passwordConfirmation
       })
       .then(() => {
         resetValues()
@@ -40,52 +37,51 @@ export default function BlogPostNew() {
 
   return (
     <Card>
-      <Card.Header>Update Painting Info
+      <Card.Header>Update Your User Info
       </Card.Header>
       <Card.Body>
         <Form onSubmit={handleSubmit}>
-        {/* <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}> */}
           <Form.Group>
-            <Form.Label>Title</Form.Label>
+            <Form.Label>User Name</Form.Label>
             <Form.Control 
-              value={title}
-              onChange={e => setTitle(e.target.value)}
-              placeholder={title}
-              type="text"
-              name="title"
-              required
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Blurb</Form.Label>
-            <Form.Control 
-              value={blurb}
+              value={userName}
               onChange={e => setBlurb(e.target.value)}
-              placeholder={blurb}
+              placeholder={user name}
               type="text"
-              name="blurb"
+              name="userName"
               required
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Artist</Form.Label>
+            <Form.Label>Email</Form.Label>
             <Form.Control 
-              value={artist}
-              onChange={e => setArtist(e.target.value)}
-              placeholder={artist}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder={email}
               type="text"
-              name="artist"
+              name="email"
               required
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Image Url</Form.Label>
+            <Form.Label>Password</Form.Label>
             <Form.Control 
-              value={imageUrl}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              placeholder={password}
+              type="text"
+              name="password"
+              required
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password Confirmation</Form.Label>
+            <Form.Control 
+              value={passwordConfirmation}
               onChange={e => setImageUrl(e.target.value)}
-              placeholder={imageUrl}
+              placeholder={password confirmation}
               type="text"
-              name="imageUrl"
+              name="passwordConfirmation"
               required
             />
           </Form.Group>
@@ -100,7 +96,7 @@ export default function BlogPostNew() {
             }} 
             type="submit"
           >
-            Update Blog Post
+            Update Info
           </Button>
         </Form>
       </Card.Body>
