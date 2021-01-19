@@ -15,6 +15,15 @@ function Navigation() {
                 <Nav.Item style={{fontSize: "150%"}} className="active">
                   <Nav.Link href="/blog_posts-new">Hang Painting</Nav.Link>
                 </Nav.Item>
+                <Nav.Item style={{fontSize: "150%"}} className="active">
+                  <Nav.Link href="/user-new">See Favorite Galleries</Nav.Link>
+                </Nav.Item>
+                <Nav.Item style={{fontSize: "150%"}} className="active">
+                  <Nav.Link href="/login">Login</Nav.Link>
+                </Nav.Item>
+                <Nav.Item style={{fontSize: "150%"}} className="active">
+                  <Nav.Link href="/user-new">Sign Up</Nav.Link>
+                </Nav.Item>
                 </Nav>
                 </div>
           </ul>
