@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { updateUser } from '../Services/DatabaseCalls.js';
 
 
-export default function BlogPostNew() {
+export default function UserUpdate() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +21,7 @@ export default function BlogPostNew() {
 
   const handleSubmit = (event) => {
     event.preventDefault() 
-      updateBlogPost({
+      updateUser({
         userName: userName,
         email: email,
         password: password,
@@ -45,8 +45,8 @@ export default function BlogPostNew() {
             <Form.Label>User Name</Form.Label>
             <Form.Control 
               value={userName}
-              onChange={e => setBlurb(e.target.value)}
-              placeholder={user name}
+              onChange={e => setUserName(e.target.value)}
+              placeholder={userName}
               type="text"
               name="userName"
               required
@@ -78,8 +78,8 @@ export default function BlogPostNew() {
             <Form.Label>Password Confirmation</Form.Label>
             <Form.Control 
               value={passwordConfirmation}
-              onChange={e => setImageUrl(e.target.value)}
-              placeholder={password confirmation}
+              onChange={e => setPasswordConfirmation(e.target.value)}
+              placeholder={passwordConfirmation}
               type="text"
               name="passwordConfirmation"
               required

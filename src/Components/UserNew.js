@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button';
 import { createUser } from '../Services/DatabaseCalls.js';
 
 
-export default function BlogPostNew() {
-  const [user_name, setUserName] = useState("");
+export default function UserNew() {
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -44,7 +44,7 @@ export default function BlogPostNew() {
           <Form.Group>
             <Form.Label>User Name</Form.Label>
             <Form.Control 
-              value={title}
+              value={userName}
               onChange={e => setUserName(e.target.value)}
               placeholder="userName"
               type="text"
