@@ -1,9 +1,8 @@
 import React, { Component, useState } from 'react';
-import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { createSession } from '../Services/DatabaseCalls.js';
 
 export default function Login() {
     const [email, setEmail] = useState("");

@@ -41,3 +41,9 @@ export const updateUser = ({user_name, email, admin, password, password_confirma
     .patch('/api/blog_posts', {user_name, email, admin, password, password_confirmation})
     .then(response => response.data)
 }
+
+export const createSession = ({email, password}) => {
+  return axios
+    .post('/api/users', {email, password})
+    .then(response => response.data)
+}
