@@ -44,6 +44,6 @@ export const updateUser = ({user_name, email, admin, password, password_confirma
 
 export const createSession = ({email, password}) => {
   return axios
-    .post('/api/users', {email, password})
+    .post('/api/sessions', {email, password})
     .then(response => response.data)
 }
