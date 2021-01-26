@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* .body-2 {
+  @apply .text-fourteen .text-pointEightSevenFiveR .font-regular;
+} */
+
+.card {
+  @apply 
+    .bg-yellow-100
+    .text-blue-700
+    ;
+
+}
+
+.card .favorite {
+  @apply: 
+    .bg-green-300
+    .text-green-900
+    ;
+}
+
+.card:hover {
+  @apply: 
+    .bg-yellow-500
+    .text-blue-900
+    ;
+}
+
+.card-header {
+  @apply 
+  .bg-yellow-700
+  .text-blue-700
+  ; 
+}
+
+.card-header:hover {
+  @apply 
+  .bg-yellow-800
+  .text-blue-900; 
+}
+
+.card-body {
+  @apply 
+  .bg-yellow-100
+  .text-blue-700; 
+}
+
+.card-body:hover {
+  @apply 
+  .bg-yellow-500
+  .text-blue-900; 
+}
+
+.header {
+  @apply ; 
+}
+
+.header:hover {
+  @apply ; 
+}
+
+.user-icon {
+  @apply ; 
+}
+
+.user-icon:hover {
+  @apply ; 
+}
+
+.submit-button {
+  @apply ;
+}
+
+.submit-button:hover {
+  @apply ;
+}
