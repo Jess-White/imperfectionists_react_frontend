@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     borderColor: theme => ({
       ...theme('colors'),
@@ -73,12 +73,12 @@ module.exports = {
   },
   variants: 
   {
-    backgroundColor: ['responsive', 'odd', 'hover', 'focus', 'first', 'last']
-    textColor: ['responsive', 'odd', 'hover', 'focus', 'first', 'last']
-    borderWidth: ['responsive', 'odd', 'hover', 'focus', 'first', 'last'],
-    borderRadius: ['responsive', 'odd', 'hover', 'focus', 'first', 'last'],
-    borderColor: ['responsive', 'hover', 'group-hover'],
-    margin: ['first', 'last']
+    backgroundColor: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+    textColor: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+    borderWidth: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+    borderRadius: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+    borderColor: ['responsive', 'dark', 'hover', 'group-hover'],
+    margin: ['first', 'last'],
     extend: {},
   },
   plugins: [],

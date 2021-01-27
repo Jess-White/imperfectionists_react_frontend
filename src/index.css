@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
   margin: 0;
@@ -15,3 +15,111 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.card {
+  @apply bg-yellow-100;
+  @apply text-blue-700;
+
+}
+
+.card .favorite {
+  @apply bg-green-300;
+  @apply text-green-900;
+}
+
+.card:hover {
+  @apply bg-yellow-500;
+  @apply text-blue-900;
+}
+
+.card:dark {
+  @apply bg-blue-500;
+  @apply text-yellow-100;
+}
+
+.card:dark:hover {
+  @apply bg-blue-900;
+  @apply text-yellow-500;
+}
+
+.card-header {
+  @apply bg-yellow-700;
+  @apply text-blue-700;
+}
+
+.card-header:dark {
+  @apply bg-blue-700;
+  @apply text-yellow-700;
+}
+
+.card-header:hover {
+  @apply bg-yellow-800;
+  @apply text-blue-900; 
+}
+
+.card-header:dark:hover {
+  @apply bg-blue-900;
+  @apply text-yellow-800;
+}
+
+.card-body {
+  @apply bg-yellow-100;
+  @apply text-blue-700; 
+}
+
+.card-body:dark {
+  @apply bg-blue-700;
+  @apply text-yellow-100; 
+}
+
+.card-body:hover {
+  @apply bg-yellow-500;
+  @apply text-blue-900; 
+}
+
+.card-body:dark:hover {
+  @apply bg-blue-900;
+  @apply text-yellow-500; 
+}
+
+.header-jumbo {
+  @apply text-8xl;
+  @apply bg-yellow-500;
+  @apply-text-blue-500;
+}
+
+.header-jumbo:hover {
+  @apply bg-yellow-800;
+  @apply-text-blue-900;
+}
+
+.header:hover {
+  @apply bg-yellow-800;
+
+}
+
+.header:dark {
+  @apply text-3xl;
+  @apply bg-blue-500;
+}
+
+.header:dark:hover {
+  @apply bg-blue-800; 
+}
+
+/* .user-icon {
+  @apply ; 
+}
+
+.user-icon:hover {
+  @apply ; 
+}
+
+.submit-button {
+  @apply 
+  ;
+}
+
+.submit-button:hover {
+  @apply ;
+} */

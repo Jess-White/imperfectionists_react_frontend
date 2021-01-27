@@ -28,7 +28,7 @@ export default function BlogPostIndex() {
       return (
         <div>
           {blogPosts.map(blogPost => 
-            <Card>
+            <Card className="card">
               <Card.Header><h1>{blogPost.title}</h1></Card.Header>
               <Card.Body>
                 <Image src={blogPost.image_url} style={{maxWidth: "40%", maxHeight: "auto"}} thumbnail fluid />
