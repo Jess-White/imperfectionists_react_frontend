@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Navigation() {
     return (
-        <Navbar bg="light" expand="lg" sticky="top">
+        <Navbar class="navvy" expand="lg" sticky="top">
           <ul>
               <div>
               {localStorage.token && localStorage.user_id ? (

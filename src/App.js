@@ -23,8 +23,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className={isDark ? "dark" : null}>
+    <div className={!isDark ? "App dark" : "App"}>
+      <div className={!isDark ? "dark" : null}>
       <div>
         <Button onClick={handleDarkMode}>Turn on Dark Mode</Button>
         <BrowserRouter>

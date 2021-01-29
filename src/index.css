@@ -16,9 +16,17 @@ code {
     monospace;
 }
 
-.body {
-  @apply text-navyBlack;
+.App {
   @apply bg-yellowBeige;
+}
+
+.dark .App {
+  @apply bg-navyBlack;
+}
+
+.navbar {
+  @apply bg-oliveGreen;
+  @apply text-blackPink;
 }
 
 .card {
@@ -86,7 +94,7 @@ code {
   @apply text-deepPlum;
 }
 
-.dark .header, .dark {
+.dark .header, {
   @apply bg-deepPlum;
   @apply text-mintGreen;
 }

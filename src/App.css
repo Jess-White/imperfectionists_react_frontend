@@ -1,23 +1,17 @@
 .App {
   text-align: center;
-  /* background-color: #3d3d3d;
-  color: #c5c5c5; */
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   padding: 15%;
 }
 
 .header {
   text-align: center;
-  /* background-color: #3d3d3d;
-  color: #c5c5c5; */
 }
 
 .jumbotron {
   text-align: center;
   font-size: 200%;
   letter-spacing: 5px;
-  /* background-color: #3d3d3d;
-  color: #c5c5c5; */
 }
 
 
