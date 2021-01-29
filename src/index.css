@@ -16,95 +16,130 @@ code {
     monospace;
 }
 
-.card {
-  @apply bg-yellow-100;
-  @apply text-blue-700;
-
+.body {
+  @apply text-navyBlack;
+  @apply bg-yellowBeige;
 }
 
-.card .favorite {
-  @apply bg-green-300;
-  @apply text-green-900;
+.card {
+  @apply text-blackPink;
+  @apply bg-oliveGreen;
+}
+
+.dark .card {
+  @apply bg-blackPink;
+  @apply text-oliveGreen;
 }
 
 .card:hover {
-  @apply bg-yellow-500;
-  @apply text-blue-900;
+  @apply text-greyCyan;
+  @apply bg-navyPurple;
 }
 
-.card:dark {
-  @apply bg-blue-500;
-  @apply text-yellow-100;
-}
-
-.card:dark:hover {
-  @apply bg-blue-900;
-  @apply text-yellow-500;
+.dark .card:hover {
+  @apply bg-greyCyan;
+  @apply text-navyPurple;
 }
 
 .card-header {
-  @apply bg-yellow-700;
-  @apply text-blue-700;
+  @apply bg-manganiteBlue;
+  @apply text-blackMagenta;
 }
 
-.card-header:dark {
-  @apply bg-blue-700;
-  @apply text-yellow-700;
+.dark .card-header {
+  @apply bg-blackMagenta;
+  @apply text-manganiteBlue;
 }
 
 .card-header:hover {
-  @apply bg-yellow-800;
-  @apply text-blue-900; 
+  @apply bg-cadetBlue;
+  @apply text-grassGreen; 
 }
 
-.card-header:dark:hover {
-  @apply bg-blue-900;
-  @apply text-yellow-800;
+.dark .card-header:hover {
+  @apply bg-grassGreen;
+  @apply text-cadetBlue;
 }
 
 .card-body {
-  @apply bg-yellow-100;
-  @apply text-blue-700; 
+  @apply bg-brightOrchid;
+  @apply text-blackFuschia; 
 }
 
-.card-body:dark {
-  @apply bg-blue-700;
-  @apply text-yellow-100; 
+.dark .card-body {
+  @apply bg-blackFuschia;
+  @apply text-brightOrchid; 
 }
 
 .card-body:hover {
-  @apply bg-yellow-500;
-  @apply text-blue-900; 
+  @apply bg-darkMagenta;
+  @apply text-hotPink; 
 }
 
-.card-body:dark:hover {
-  @apply bg-blue-900;
-  @apply text-yellow-500; 
+.dark .card-body:hover {
+  @apply bg-hotPink;
+  @apply text-darkMagenta; 
+}
+
+.header {
+  @apply bg-mintGreen;
+  @apply text-deepPlum;
+}
+
+.dark .header, .dark {
+  @apply bg-deepPlum;
+  @apply text-mintGreen;
+}
+
+.header:hover {
+  @apply bg-canaryYellow;
+  @apply text-grape;
+}
+
+.dark .header:hover {
+  @apply bg-grape;
+  @apply text-canaryYellow;
 }
 
 .header-jumbo {
   @apply text-8xl;
-  @apply bg-yellow-500;
-  @apply-text-blue-500;
+  @apply bg-mintGreen;
+  @apply text-deepPlum;
+}
+
+.dark .header-jumbo, .dark {
+  @apply bg-deepPlum;
+  @apply text-mintGreen;
 }
 
 .header-jumbo:hover {
-  @apply bg-yellow-800;
-  @apply-text-blue-900;
+  @apply bg-canaryYellow;
+  @apply text-grape;
 }
 
-.header:hover {
-  @apply bg-yellow-800;
-
+.dark .header-jumbo:hover {
+  @apply bg-grape;
+  @apply text-canaryYellow;
 }
 
-.header:dark {
-  @apply text-3xl;
-  @apply bg-blue-500;
+.btn {
+  @apply bg-redPink;
+  @apply text-blackViolet;
 }
 
-.header:dark:hover {
-  @apply bg-blue-800; 
+.dark .btn {
+  @apply bg-blackViolet;
+  @apply text-redPink;
+}
+
+.btn:hover {
+  @apply bg-grape;
+  @apply text-canaryYellow;
+}
+
+.dark .btn:hover {
+  @apply bg-grape;
+  @apply text-canaryYellow;
 }
 
 /* .user-icon {

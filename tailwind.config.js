@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     borderColor: theme => ({
       ...theme('colors'),
@@ -67,19 +67,43 @@ module.exports = {
           '100': '#cacaed',
           '200': '#9191da',
           '600': '#333399' //primary
-        }
+        },
+        royalPurple: "#2f088c", //App
+        yellowBeige: "#c8c583",
+        navyBlack: "#011e2c", //App hover
+        lavender: "#987ba6",
+        blackPink: "#170411", //Card
+        oliveGreen: "#45905b",
+        greyCyan: "#7da8a7", //Card hover
+        navyPurple: "#262766",
+        manganiteBlue: "#2778f3", //Card header
+        blackMagenta: "#280517",
+        grassGreen: "#69e078", //Card header hover
+        cadetBlue: "#293454",
+        brightOrchid: "#b54ef3", //Card body 
+        blackFuschia: "#260d1b",
+        darkMagenta: "#2d003b", //Card body header
+        hotPink: "#fa239c",
+        deepPlum: "#511a68", //Header jumbo
+        mintGreen: "#1bba88",
+        canaryYellow: "#feff4b", //Header jumbo hover
+        grape: "#802e7f",
+        blackViolet: "#230b2e", //Button
+        redPink: "#fa0d71",
+        raspberry: "#97042e", //Button hover 
+        palePeach: "#eebda0"
       }
     },
   },
-  variants: 
-  {
-    backgroundColor: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
-    textColor: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
-    borderWidth: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
-    borderRadius: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
-    borderColor: ['responsive', 'dark', 'hover', 'group-hover'],
-    margin: ['first', 'last'],
-    extend: {},
+  variants: {
+    extend: {
+      backgroundColor: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+      textColor: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+      borderWidth: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+      borderRadius: ['responsive', 'dark', 'odd', 'hover', 'focus', 'first', 'last'],
+      borderColor: ['responsive', 'dark', 'hover', 'group-hover'],
+      margin: ['first', 'last'],
+    }
   },
   plugins: [],
 }

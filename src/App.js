@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react';
 import Header from './Components/Header';
 import Navigation from './Components/Navigation';
 import BlogPostIndex from './Components/BlogPostIndex';
@@ -10,10 +11,22 @@ import UserNew from './Components/UserNew';
 import UserUpdate from './Components/UserUpdate';
 // import Login from './Components/Login';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 function App() {
+
+  const [isDark, setIsDark] = useState("false");
+
+  const handleDarkMode = () => {
+    setIsDark(!isDark)
+    console.log(isDark)
+  };
+
   return (
     <div className="App">
+      <div className={isDark ? "dark" : null}>
+      <div>
+        <Button onClick={handleDarkMode}>Turn on Dark Mode</Button>
         <BrowserRouter>
           <Navigation />
           <Header />
@@ -23,16 +36,18 @@ function App() {
             </Route>
             
             <Route exact path={'/blog_posts'} component={BlogPostIndex} />
-            <Route path={'/blog_posts/:id'} component={BlogPostShow} />
-            <Route path={'/blog_posts-new'} component={BlogPostNew} />
-            <Route path={'/blog_posts/:id'} component={BlogPostUpdate} />
-            <Route path={'/users'} component={UserIndex} />
-            <Route path={'/user-new'} component={UserNew} />
-            <Route path={'/user/:id'} component={UserUpdate} />
+            <Route exact path={'/blog_posts/:id'} component={BlogPostShow} />
+            <Route exact path={'/blog_posts/new'} component={BlogPostNew} />
+            <Route exact path={'/blog_posts/:id/update'} component={BlogPostUpdate} />
+            <Route exact path={'/users'} component={UserIndex} />
+            <Route exact path={'/user/new'} component={UserNew} />
+            <Route exact path={'/user/:id'} component={UserUpdate} />
             {/* <Route path={'/login'} component={Login} /> */}
 
-          </Switch>
-        </BrowserRouter>
+            </Switch>
+          </BrowserRouter>
+        </div>
+        </div>
       </div>
   );
 }

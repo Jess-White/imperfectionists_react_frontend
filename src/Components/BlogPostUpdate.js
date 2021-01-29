@@ -1,33 +1,53 @@
-import React, { Component, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { updateBlogPost } from '../Services/DatabaseCalls.js';
+import { updateBlogPost, getBlogPost } from '../Services/DatabaseCalls.js';
 
 
-export default function BlogPostNew() {
+export default function BlogPostUpdate() {
+  
+  const [error, setError] = useState([]);
+
   const [title, setTitle] = useState("");
   const [blurb, setBlurb] = useState("");
   const [artist, setArtist] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
-  // const [wordCount, setWordCount] = useState("");
-  // const [likeCount, setLikeCount] = useState("");
+  const { id } = useParams()
+
+  useEffect(() =>
+    {
+      getBlogPost(id)
+        .then(response => {
+        console.log("blog post:",response)
+        // setTitle(response.data.title)
+        // setBlurb(response.data.blurb)
+        // setArtist(response.data.artist)
+        // setImageUrl(response.data.image_url)
+      })
+      .catch(error => {
+        setError("Something went wrong.")
+      })
+  }, []);
 
   const resetValues = () => {
-    setTitle(title);
-    setBlurb(blurb);
-    setArtist(artist);
-    setImageUrl(imageUrl);
+    setTitle("");
+    setBlurb("");
+    setArtist("");
+    setImageUrl("");
   }
 
   const handleSubmit = (event) => {
     event.preventDefault() 
+
       updateBlogPost({
-        title: title,
-        blurb: blurb,
-        artist: artist,
+        id,
+        title,
+        blurb,
+        artist,
         image_url: imageUrl
       })
       .then(() => {
@@ -36,7 +56,7 @@ export default function BlogPostNew() {
       .catch(() => {
         resetValues()
       })
-  }
+    }
 
   return (
     <Card>
@@ -44,7 +64,6 @@ export default function BlogPostNew() {
       </Card.Header>
       <Card.Body>
         <Form onSubmit={handleSubmit}>
-        {/* <Form onSubmit={this.handleSubmit} ref={(el) => this.myFormRef = el}> */}
           <Form.Group>
             <Form.Label>Title</Form.Label>
             <Form.Control 

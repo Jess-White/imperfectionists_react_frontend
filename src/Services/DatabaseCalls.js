@@ -9,16 +9,31 @@ export const getBlogPosts = () => {
   })
 }
 
+export const getBlogPost = (id) => {
+  return axios
+    .get(`/api/blog_posts/${id}`)
+    .then(response => {
+      console.log('response:', response)
+      return response.data
+    })
+    .catch(errors => {
+      console.log(errors);
+  })
+}
+
 export const createBlogPost = ({title, blurb, artist, image_url}) => {
   return axios
     .post('/api/blog_posts', {title, blurb, artist, image_url})
     .then(response => response.data)
 }
 
-export const updateBlogPost = ({title, blurb, artist, image_url}) => {
+export const updateBlogPost = ({id, title, blurb, artist, image_url}) => {
   return axios
-    .patch('/api/blog_posts', {title, blurb, artist, image_url})
+    .patch(`/api/blog_posts/${id}`, {title, blurb, artist, image_url})
     .then(response => response.data)
+    .catch(errors => {
+      console.log(errors);
+    })
 }
 
 export const getUsers = () => {

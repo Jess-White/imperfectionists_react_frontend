@@ -17,6 +17,9 @@ function Navigation() {
                       <Nav.Link href="/blog_posts-new">Hang Painting</Nav.Link>
                     </Nav.Item>
                     <Nav.Item style={{fontSize: "150%"}} className="active">
+                      <Nav.Link href="/blog_posts-new">Hang Painting</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item style={{fontSize: "150%"}} className="active">
                       <Nav.Link href="/users">See Favorite Galleries</Nav.Link>
                     </Nav.Item>
                   </Nav>
