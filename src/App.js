@@ -15,16 +15,16 @@ import Button from 'react-bootstrap/Button';
 
 function App() {
 
-  const [isDark, setIsDark] = useState("false");
+  const [isDark, setIsDark] = useState(false);
 
   const handleDarkMode = () => {
-    setIsDark(!isDark)
+    setIsDark((prevState) => !prevState)
     console.log(isDark)
   };
 
   return (
-    <div className={!isDark ? "App dark" : "App"}>
-      <div className={!isDark ? "dark" : null}>
+    <div className={isDark ? "App dark" : "App"}>
+      <div className={isDark ? "dark" : null}>
       <div>
         <Button onClick={handleDarkMode}>Turn on Dark Mode</Button>
         <BrowserRouter>
