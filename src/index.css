@@ -94,7 +94,7 @@ code {
   @apply text-deepPlum;
 }
 
-.dark .header, {
+.dark .header {
   @apply bg-deepPlum;
   @apply text-mintGreen;
 }
