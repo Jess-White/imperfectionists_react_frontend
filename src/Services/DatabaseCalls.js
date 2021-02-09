@@ -3,9 +3,10 @@ import create from 'zustand'
 
 export const useBlogPostIndexStore = create(set => ({
   blogPosts: [],
+  searchResults: [],
   errors: [],
   loading: false,
-  axiosRequest: async () => {
+  axiosIndexRequest: async () => {
     try {
       set({
         loading: true
@@ -22,8 +23,27 @@ export const useBlogPostIndexStore = create(set => ({
         loading: false
       })
     }
-  }  
+  },
+  axiosSearchRequest: async (searchParams) => {
+    try {
+      set({
+        loading: true
+      })
+      const blogPosts = await searchBlogPosts(searchParams)
+      set({
+        blogPosts: blogPosts,
+        loading: false
+      })
+    } catch(error) {
+      const errors = await searchBlogPosts(searchParams)
+      set({
+        errors: errors,
+        loading: false
+      })
+    }
+  }
 }))
+
 
 export const getBlogPosts = () => {
   return axios
@@ -35,18 +55,18 @@ export const useBlogPostShowStore = create(set => ({
   blogPost: {},
   errors: [],
   loading: false,
-  axiosRequest: async () => {
+  axiosRequest: async (id) => {
     try {
       set({
         loading: true
       })
-      const blogPost = await getBlogPost()
+      const blogPost = await getBlogPost(id)
       set({
         blogPost: blogPost,
         loading: false
       })
     } catch(error) {
-      const errors = await getBlogPost()
+      const errors = await getBlogPost(id)
       set({
         errors: errors,
         loading: false
@@ -63,35 +83,53 @@ export const getBlogPost = (id) => {
     })
 }
 
-export const useBlogPostCreateStore = create(set => ({
-  newBlogPost: {},
-  errors: [],
-  loading: false,
-  axiosRequest: async () => {
-    try {
-      set({
-        loading: true
-      })
-      const newBlogPost = await createBlogPost()
-      set({
-        newBlogPost: newBlogPost,
-        loading: false
-      })
-    } catch(error) {
-      const errors = await createBlogPost()
-      set({
-        errors: errors,
-        loading: false
-      })
-    }
-  }  
-}))
+export const searchBlogPosts = (searchParams) => {
+  return axios 
+  .get(`/api/blog_posts/`)
+  .then(response => 
+    response.data
+  )
+  .then(response => {
+    response.data.filter(blogPost => {
+      return blogPost.title.includes(searchParams)
+    })
+  })
+}
+
+
+
+// export const useBlogPostCreateStore = create(set => ({
+//   newBlogPost: {},
+//   errors: [],
+//   loading: false,
+//   axiosRequest: async () => {
+//     try {
+//       set({
+//         loading: true
+//       })
+//       const newBlogPost = await createBlogPost()
+//       set({
+//         newBlogPost: newBlogPost,
+//         loading: false
+//       })
+//     } catch(error) {
+//       const errors = await createBlogPost()
+//       set({
+//         errors: errors,
+//         loading: false
+//       })
+//     }
+//   }  
+// }))
 
 
 export const createBlogPost = ({title, blurb, artist, image_url}) => {
   return axios
     .post('/api/blog_posts', {title, blurb, artist, image_url})
     .then(response => response.data)
+    .catch(errors => {
+      console.log(errors);
+    })
 }
 
 export const updateBlogPost = ({id, title, blurb, artist, image_url}) => {

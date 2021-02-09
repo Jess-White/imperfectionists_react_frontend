@@ -3,8 +3,7 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { createBlogPost } from '../Services/DatabaseCalls.js';
-
+import { createBlogPost, useBlogPostCreateStore } from '../Services/DatabaseCalls.js';
 
 export default function BlogPostNew() {
   const [title, setTitle] = useState("");
