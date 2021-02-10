@@ -14,10 +14,13 @@ function Navigation() {
                       <Nav.Link href="/blog_posts">Gallery</Nav.Link>
                     </Nav.Item>
                     <Nav.Item style={{fontSize: "150%"}} className="active">
-                      <Nav.Link href="/blog_posts-new">Hang Painting</Nav.Link>
+                      <Nav.Link as={Link} to="/blog_posts-search">Search Gallery</Nav.Link>
                     </Nav.Item>
                     <Nav.Item style={{fontSize: "150%"}} className="active">
                       <Nav.Link href="/blog_posts-new">Hang Painting</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item style={{fontSize: "150%"}} className="active">
+                      <Nav.Link href="/blog_posts-update">Update Painting</Nav.Link>
                     </Nav.Item>
                     <Nav.Item style={{fontSize: "150%"}} className="active">
                       <Nav.Link href="/users">See Favorite Galleries</Nav.Link>
@@ -29,10 +32,10 @@ function Navigation() {
                       <Nav.Link href="/login">Login</Nav.Link>
                     </Nav.Item>
                     <Nav.Item style={{fontSize: "150%"}} className="active">
-                      <Nav.Link href="/user-new">Sign Up</Nav.Link>
+                      <Nav.Link href="/user/new">Sign Up</Nav.Link>
                     </Nav.Item>
                     <Nav.Item style={{fontSize: "150%"}} className="active">
-                      <Nav.Link href="/user-update">Update User</Nav.Link>
+                      <Nav.Link href="/user/update">Update User</Nav.Link>
                     </Nav.Item>
                   </Nav>
                 )}

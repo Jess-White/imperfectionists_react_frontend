@@ -6,6 +6,7 @@ import BlogPostIndex from './Components/BlogPostIndex';
 import BlogPostShow from './Components/BlogPostShow';
 import BlogPostNew from './Components/BlogPostNew';
 import BlogPostUpdate from './Components/BlogPostUpdate';
+import BlogPostSearch from './Components/BlogPostSearch';
 import UserIndex from './Components/UserIndex';
 import UserNew from './Components/UserNew';
 import UserUpdate from './Components/UserUpdate';
@@ -37,10 +38,11 @@ function App() {
             
             <Route exact path={'/blog_posts'} component={BlogPostIndex} />
             <Route exact path={'/blog_posts/:id'} component={BlogPostShow} />
-            <Route exact path={'/blog_posts/new'} component={BlogPostNew} />
+            <Route exact path={'/blog_posts-new'} component={BlogPostNew} />
             <Route exact path={'/blog_posts/:id/update'} component={BlogPostUpdate} />
+            <Route exact path={'/blog_posts-search'} component={BlogPostSearch} />
             <Route exact path={'/users'} component={UserIndex} />
-            <Route exact path={'/user/new'} component={UserNew} />
+            <Route exact path={'/user-new'} component={UserNew} />
             <Route exact path={'/user/:id'} component={UserUpdate} />
             {/* <Route path={'/login'} component={Login} /> */}
 

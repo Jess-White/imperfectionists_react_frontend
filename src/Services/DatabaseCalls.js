@@ -29,9 +29,9 @@ export const useBlogPostIndexStore = create(set => ({
       set({
         loading: true
       })
-      const blogPosts = await searchBlogPosts(searchParams)
+      const searchResults = await searchBlogPosts(searchParams)
       set({
-        blogPosts: blogPosts,
+        searchResults: searchResults,
         loading: false
       })
     } catch(error) {
@@ -86,11 +86,8 @@ export const getBlogPost = (id) => {
 export const searchBlogPosts = (searchParams) => {
   return axios 
   .get(`/api/blog_posts/`)
-  .then(response => 
-    response.data
-  )
   .then(response => {
-    response.data.filter(blogPost => {
+    return response.data.filter(blogPost => {
       return blogPost.title.includes(searchParams)
     })
   })
