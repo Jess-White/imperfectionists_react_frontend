@@ -24,6 +24,16 @@ export default function BlogPostShow() {
       getBlogPost(id)
     }, []);
 
+    useEffect(() => {
+      setArtist(blogPost.artist);
+      setTitle(blogPost.title);
+      setArtist(blogPost.artist);
+      setImageUrl(blogPost.image_url);
+      setLikeCount(blogPost.like_count);
+      setYear(blogPost.year);
+    }, [blogPost]
+  );
+
   if (!blogPost) {
     return <div>Loading...</div>
   } else {

@@ -44,7 +44,6 @@ export const useBlogPostIndexStore = create(set => ({
   }
 }))
 
-
 export const getBlogPosts = () => {
   return axios
     .get('/api/blog_posts')
@@ -75,6 +74,7 @@ export const useBlogPostShowStore = create(set => ({
   }  
 }))
 
+
 export const getBlogPost = (id) => {
   return axios
     .get(`/api/blog_posts/${id}`)
@@ -88,12 +88,10 @@ export const searchBlogPosts = (searchParams) => {
   .get(`/api/blog_posts/`)
   .then(response => {
     return response.data.filter(blogPost => {
-      return blogPost.title.includes(searchParams)
+      return blogPost.title.toLowerCase().includes(searchParams.toLowerCase())
     })
   })
 }
-
-
 
 // export const useBlogPostCreateStore = create(set => ({
 //   newBlogPost: {},
@@ -118,7 +116,6 @@ export const searchBlogPosts = (searchParams) => {
 //     }
 //   }  
 // }))
-
 
 export const createBlogPost = ({title, blurb, artist, image_url}) => {
   return axios
