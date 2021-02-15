@@ -1,3 +1,4 @@
+import axios from 'axios'
 import create from 'zustand'
 
 export const getArtworks = () => {
@@ -9,6 +10,30 @@ export const searchArtworks = (searchQuery) => {
     return axios(`https://api.artic.edu/api/v1/artworks/search?q=${searchQuery}&size=10`)
         .then(response => response.data)
 }
+
+export const filterArtworks = (searchParams) => {
+    return axios(`https://api.artic.edu/api/v1/search?q=${searchParams}&size=10`)
+        .then(response => response.data)
+  }
+
+export const matchArtworks = (searchParams) => {
+    const query = {
+        query: {
+            match: {
+              "title": `${searchParams}`
+            }
+        }
+      }
+    
+    return axios.get('https://api.artic.edu/api/v1/artworks/search', {
+        data: JSON.stringify(query),
+        })
+        .then(response => response.data)
+  }
+
+  
+
+
 
 export const getShowArtwork = (searchResultId) => {
     return axios (`https://api.artic.edu/api/v1/artworks/${searchResultId}`)
